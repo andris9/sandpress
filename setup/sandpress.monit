@@ -1,0 +1,4 @@
+check process sandpress with pidfile /var/run/sandpress.pid
+   start program = "/etc/init.d/sandpress start"
+   stop program = "/etc/init.d/sandpress stop"
+   if 5 restarts within 5 cycles then timeout

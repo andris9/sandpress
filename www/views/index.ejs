@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Sandpress - Secure storage</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/custom.css">
+
+    </head>
+    <body>
+        <div id="wrap">
+
+            <div class="container">
+
+                <div class="page-header">
+                    <h1>Sandpress</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-10">
+
+                        <p>Stored data is encrypted and decrypted in the browser with provided encryption password - this password is never revealed to the server and is used in the browser side only. Data retrieval and storage is authorized with <a href="http://www.yubico.com/">Yubikey</a>. Only the person with the correct Yubikey can access the encrypted data and only the person knowing the password can decrypt it.</p>
+
+
+                        <div class="form-group">
+                            <label for="data">Secure data</label>
+                            <textarea class="form-control" rows="13" name="data" id="data"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-10">
+                        <div class="form-group">
+                            <label for="pass">Encryption password</label>
+                            <input type="password" class="form-control" name="pass" id="pass" autocomplete="off"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-5">
+                        <form onsubmit="load(); return false;">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="otp-load" placeholder="Yubikey OTP" autocomplete="off">
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit" id="load-btn" data-loading-text="Loading data..."><span class="glyphicon glyphicon-cloud-download"></span>
+         Load encrypted data</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-5">
+                        <form onsubmit="store(); return false;">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="otp-save" placeholder="Yubikey OTP" autocomplete="off">
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit" id="save-btn" data-loading-text="Storing data..."><span class="glyphicon glyphicon-cloud-upload"></span>
+         Encrypt and store data</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div id="footer">
+          <div class="container">
+            <p class="text-muted credit">&copy; 2013 <a href="http://andrisreinman.com">Andris Reinman</a>, source available at <a href="http://github.com/andris9/storage">GitHub</a>. Crypto is handled by BSD licensed <a href="http://code.google.com/p/crypto-js/">Crypto.js</a></p>
+          </div>
+        </div>
+
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
+        <script src="/js/safe.js"></script>
+    </body>
+</html>

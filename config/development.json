@@ -1,0 +1,23 @@
+{
+    "#": "HTTP configuration",
+    "web":{
+        "port": 3487,
+        "loggerInterface": "tiny",
+        "host": "localhost"
+    },
+
+    "#": "Yubikey API keys, generate here: https://upgrade.yubico.com/getapikey/",
+    "yubikey":{
+        "client_id": "12345",
+        "secret_key": "abcdef"
+    },
+
+    "#": "Mongodb configuration",
+    "mongo":{
+        "#": "Server hostname",
+        "host": "localhost",
+
+        "#": "Database name",
+        "name": "sandpress"
+    }
+}
