@@ -106,7 +106,7 @@ function load(){
         }else{
             try{
                 document.getElementById("data").value = CryptoJS.AES.decrypt(JSON.stringify(response), pass, { format: JsonFormatter }).toString(CryptoJS.enc.Utf8);
-                alert("Data loaded and encrypted using provided encryption password");
+                alert("Data loaded and decrypted using provided encryption password");
             }catch(E){
                 alert("Error decrypting data\n" + E.message);
             }
